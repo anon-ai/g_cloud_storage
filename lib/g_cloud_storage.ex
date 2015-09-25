@@ -1,0 +1,2 @@
+defmodule GCloudStorage do
+end
