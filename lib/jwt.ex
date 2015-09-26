@@ -1,4 +1,4 @@
-defmodule GCloudStorage.Token.JWT.Composer do
+defmodule GCloudStorage.JWT do
   alias GCloudStorage.ApiCredentials, as: Credentials
 
   @refresh_url "https://www.googleapis.com/oauth2/v3/token"
@@ -9,18 +9,18 @@ defmodule GCloudStorage.Token.JWT.Composer do
     JsonWebToken.sign(claim_set, jwt_ex_options)
   end
 
-  def jwt_ex_options do
+  defp jwt_ex_options do
     %{alg: "RS256", key: private_key}
   end
 
-  def private_key do
+  defp private_key do
     path = Credentials.private_key_path
     dir  = Path.dirname(path)
     key  = Path.basename(path)
     JsonWebToken.Algorithm.RsaUtil.private_key(dir, key)
   end
 
-  def claim_set do
+  defp claim_set do
     %{
       iss:   Credentials.client_email,
       scope: @permissions,
