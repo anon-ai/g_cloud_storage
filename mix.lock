@@ -1,0 +1,5 @@
+%{"base64url": {:hex, :base64url, "0.0.1"},
+  "joken": {:hex, :joken, "0.16.0"},
+  "jose": {:hex, :jose, "1.3.0"},
+  "json_web_token": {:git, "git://github.com/lessless/json_web_token_ex.git", "9a48f1651917470709c00a8857755f38f8d5cc14", []},
+  "poison": {:hex, :poison, "1.5.0"}}

@@ -27,6 +27,9 @@ defmodule GCloudStorage.Mixfile do
   #
   # Type `mix help deps` for more examples and options
   defp deps do
-    []
+    [
+      {:poison,         "~> 1.5"},
+      {:json_web_token, github: "lessless/json_web_token_ex"}
+    ]
   end
 end
