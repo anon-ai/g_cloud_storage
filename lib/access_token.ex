@@ -1,6 +1,6 @@
 defmodule GCloudStorage.AccessToken do
   @type t :: %GCloudStorage.AccessToken{token: String.t, expires_in: integer}
-  defstruct token: "", expires_in: 0
+  defstruct token: "", expires_in: ""
 
   alias GCloudStorage.Settings, as: Settings
 
@@ -31,7 +31,7 @@ defmodule GCloudStorage.AccessToken do
   end
 
   defp private_key do
-    path = Credentials.private_key_path
+    path = Settings.private_key_path
     dir  = Path.dirname(path)
     key  = Path.basename(path)
     JsonWebToken.Algorithm.RsaUtil.private_key(dir, key)

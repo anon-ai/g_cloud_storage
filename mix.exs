@@ -7,12 +7,13 @@ defmodule GCloudStorage.Mixfile do
      elixir: "~> 1.0",
      build_embedded: Mix.env == :prod,
      start_permanent: Mix.env == :prod,
-     deps: deps]
+     deps: deps,
+     elixirc_paths: elixirc_paths(Mix.env)
+    ]
   end
 
   # Configuration for the OTP application
   #
-  # Type `mix help compile.app` for more information
   def application do
     [applications: [:logger, :httpoison]]
   end
@@ -24,4 +25,7 @@ defmodule GCloudStorage.Mixfile do
       {:json_web_token, github: "lessless/json_web_token_ex"}
     ]
   end
+
+  defp elixirc_paths(:test), do: elixirc_paths([]) ++ ["test/support"]
+  defp elixirc_paths(_), do:  ["lib"]
 end
