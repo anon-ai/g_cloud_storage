@@ -8,7 +8,7 @@ defmodule GCloudStorage.TestConfig do
 
   def token do
     %{
-      timeout: 1000
+      timeout: Application.get_env(:g_cloud_storage, :token_lifetime)  * 1000
     }
   end
 end
