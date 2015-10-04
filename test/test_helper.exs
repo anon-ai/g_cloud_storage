@@ -11,6 +11,12 @@ defmodule GCloudStorage.TestConfig do
       timeout: Application.get_env(:g_cloud_storage, :token_lifetime)  * 1000
     }
   end
+
+  def storage do
+    %{
+      project: "cloud-storage-playgorund"
+    }
+  end
 end
 
 
