@@ -4,9 +4,19 @@ defmodule GCloudStorage.BucketTest do
   alias GCloudStorage.TestConfig, as: Config
   alias GCloudStorage.Bucket
 
-  test "retrives buckets in the project" do
-    buckets = Bucket.list(Config.storage[:project])
-    assert length(buckets[:items]) == 2
+  test "simple CRUD for buckets in the project" do
+    project = Config.storage[:project]
+
+    # read
+    buckets = Bucket.list(project)
+    assert length(buckets) == 0
+
+    # insert
+    params = %GCloudStorage.Bucket{name: "test_bucket"}
+    bucket = Bucket.insert(project, bucket)
     assert %GCloudStorage.Bucket{} = List.first(buckets[:items])
   end
+
+  # test "predifined acl"
+  # test "predifned defulat object acl"
 end

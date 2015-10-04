@@ -1,6 +1,6 @@
 defmodule GCloudStorage.AccessToken do
   @type t :: %GCloudStorage.AccessToken{token: String.t, expires_in: integer}
-  defstruct token: "", expires_in: ""
+  defstruct token: "", expires_in: nil
 
   alias GCloudStorage.Settings, as: Settings
 
@@ -9,6 +9,9 @@ defmodule GCloudStorage.AccessToken do
   @header       ~s({"alg":"RS256","typ":"JWT"})
   @access_token_exchange_url "https://www.googleapis.com/oauth2/v3/token"
 
+  @doc """
+  Exchang JWT to the auth token
+  """
   def refresh do
     form_data = [
         grant_type: "urn:ietf:params:oauth:grant-type:jwt-bearer",

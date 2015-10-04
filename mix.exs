@@ -15,7 +15,10 @@ defmodule GCloudStorage.Mixfile do
   # Configuration for the OTP application
   #
   def application do
-    [applications: [:logger, :httpoison]]
+    [
+      applications: [:logger, :httpoison],
+      mod: {GCloudStorage, []}
+    ]
   end
 
   defp deps do

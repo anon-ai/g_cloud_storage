@@ -1,0 +1,18 @@
+// Bucket creation
+
+{
+    "kind": "storage#bucket",
+    "id": "console_bucket",
+    "selfLink": "https://www.googleapis.com/storage/v1/b/console_bucket",
+    "projectNumber": "882067498796",
+    "name": "console_bucket",
+    "timeCreated": "2015-10-03T00:29:06.451Z",
+    "updated": "2015-10-03T00:29:06.451Z",
+    "metageneration": "1",
+    "owner": {
+        "entity": "project-owners-882067498796"
+    },
+    "location": "US",
+    "storageClass": "STANDARD",
+    "etag": "CAE="
+}
