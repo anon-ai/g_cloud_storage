@@ -6,15 +6,15 @@ defmodule GCloudStorage.BucketTest do
 
   test "simple CRUD for buckets in the project" do
     project = Config.storage[:project]
+    name = "#{project}-test-bucket"
+    params = %GCloudStorage.BucketParams{name: name}
 
-    # read
-    buckets = Bucket.list(project)
-    assert length(buckets) == 0
-
-    # insert
-    params = %GCloudStorage.Bucket{name: "test_bucket"}
-    bucket = Bucket.insert(project, bucket)
-    assert %GCloudStorage.Bucket{} = List.first(buckets[:items])
+    assert {:ok, []} = Bucket.list(project)
+    assert {:ok, %GCloudStorage.Bucket{name: name}} = Bucket.insert(project, params)
+    assert {:error, %{code: _, errors: _, message: _}} = Bucket.insert(project, params)
+    assert {:ok, [%GCloudStorage.Bucket{name: name}]} = Bucket.list(project)
+    assert {:ok, nil} = Bucket.delete(name)
+    assert {:error, %{code: _, errors: _, message: _}} = Bucket.delete(name)
   end
 
   # test "predifined acl"

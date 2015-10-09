@@ -2,11 +2,10 @@ defmodule GCloudStorage.TokenCacheTest do
   use ExUnit.Case
 
   alias GCloudStorage.TokenCache
-  alias GCloudStorage.AccessToken
   alias GCloudStorage.TestConfig, as: Config
 
   setup_all do
-   {:ok, _pid} = TokenCache.start_link
+   TokenCache.start_link
    :ets.new(Config.ets[:table], [:set, :public, :named_table, {:read_concurrency, true}])
     on_exit fn ->
       if (:ets.info(Config.ets[:table]) != :undefined) do

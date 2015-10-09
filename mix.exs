@@ -25,6 +25,7 @@ defmodule GCloudStorage.Mixfile do
     [
       {:poison,         "~> 1.5"},
       {:httpoison,      "~> 0.7.2"},
+      {:"elixir-pipes",   github: "batate/elixir-pipes", app: false},
       {:json_web_token, github: "lessless/json_web_token_ex"}
     ]
   end

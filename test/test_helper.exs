@@ -14,7 +14,7 @@ defmodule GCloudStorage.TestConfig do
 
   def storage do
     %{
-      project: "cloud-storage-playgorund"
+      project: "exs-sandbox"
     }
   end
 end
