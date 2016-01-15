@@ -65,6 +65,6 @@ defmodule GCloudStorage.Bucket do
    end
 
    defp convert_keys_to_atoms(params) do
-     for {key, val} <- params, into: %{}, do: {String.to_atom(key), val}
+     for {key, val} <- params, into: %{}, do: {String.to_existing_atom(key), val}
    end
 end
