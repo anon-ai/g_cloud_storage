@@ -1,6 +1,6 @@
-defmodule GCloudStorage.Client do
+defmodule GCloudStorage.Uploadclient do
   use HTTPoison.Base
-  @base_url "https://www.googleapis.com/storage/v1/b/"
+  @base_url "https://www.googleapis.com/upload/storage/v1/b/"
 
   def process_url(url) do
     @base_url <> url
@@ -9,8 +9,7 @@ defmodule GCloudStorage.Client do
   defp process_request_headers(headers) do
     token = GCloudStorage.TokenCache.access_token
     Enum.into(headers, [
-          {"Authorization", "Bearer #{token}"},
-          {"Content-type", "application/json"}
+          {"Authorization", "Bearer #{token}"}
         ]
     )
   end
