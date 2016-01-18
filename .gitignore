@@ -2,9 +2,8 @@
 /deps
 erl_crash.dump
 *.ez
-/priv/google/storage.json
-/priv/google/storage.key.pem
+/priv/google/
 /test/fixture/storage.p12
-/test/fixture/storage.json
+w/test/fixture/storage.json
 /test/fixture/storage.crt.pem
 /test/fixture/storage.key.pem

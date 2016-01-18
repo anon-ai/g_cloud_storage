@@ -1,0 +1,34 @@
+[
+  {
+    "request": {
+      "body": "",
+      "headers": {
+        "Authorization": "Bearer ya29.bQJZRPtY8tN11qqy4yWSy6vsqP5Lneg7kZwT-mOQIkL1DpAuqPNgn4wWTgGaXXEDcOgqFBA",
+        "Content-type": "application/json"
+      },
+      "method": "get",
+      "options": [],
+      "request_body": "",
+      "url": "https://www.googleapis.com/storage/v1/b/?project=exs-sandbox"
+    },
+    "response": {
+      "body": "{\n \"kind\": \"storage#buckets\",\n \"items\": [\n  {\n   \"kind\": \"storage#bucket\",\n   \"id\": \"exs-sandbox-test-bucket\",\n   \"selfLink\": \"https://www.googleapis.com/storage/v1/b/exs-sandbox-test-bucket\",\n   \"projectNumber\": \"139343393035\",\n   \"name\": \"exs-sandbox-test-bucket\",\n   \"timeCreated\": \"2016-01-18T17:48:38.785Z\",\n   \"updated\": \"2016-01-18T17:48:38.785Z\",\n   \"metageneration\": \"1\",\n   \"owner\": {\n    \"entity\": \"project-owners-139343393035\"\n   },\n   \"location\": \"US\",\n   \"storageClass\": \"STANDARD\",\n   \"etag\": \"CAE=\"\n  }\n ]\n}\n",
+      "headers": {
+        "Expires": "Mon, 18 Jan 2016 17:53:45 GMT",
+        "Date": "Mon, 18 Jan 2016 17:53:45 GMT",
+        "Cache-Control": "private, max-age=0, must-revalidate, no-transform",
+        "Vary": "Origin",
+        "Content-Type": "application/json; charset=UTF-8",
+        "X-Content-Type-Options": "nosniff",
+        "X-Frame-Options": "SAMEORIGIN",
+        "X-XSS-Protection": "1; mode=block",
+        "Content-Length": "524",
+        "Server": "GSE",
+        "Alternate-Protocol": "443:quic,p=1",
+        "Alt-Svc": "quic=\":443\"; ma=604800; v=\"30,29,28,27,26,25\""
+      },
+      "status_code": 200,
+      "type": "ok"
+    }
+  }
+]

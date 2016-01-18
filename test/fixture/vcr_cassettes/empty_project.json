@@ -1,0 +1,34 @@
+[
+  {
+    "request": {
+      "body": "",
+      "headers": {
+        "Authorization": "Bearer ya29.bQLBYewk3SHvLCgKM-lqjZ4v7L0CBg_jASHF5GIFfmUYJiRqeJH_apHXi10lDmahrrpTdI4",
+        "Content-type": "application/json"
+      },
+      "method": "get",
+      "options": [],
+      "request_body": "",
+      "url": "https://www.googleapis.com/storage/v1/b/?project=exs-sandbox"
+    },
+    "response": {
+      "body": "{\n \"kind\": \"storage#buckets\"\n}\n",
+      "headers": {
+        "Expires": "Mon, 18 Jan 2016 17:55:50 GMT",
+        "Date": "Mon, 18 Jan 2016 17:55:50 GMT",
+        "Cache-Control": "private, max-age=0, must-revalidate, no-transform",
+        "Vary": "Origin",
+        "Content-Type": "application/json; charset=UTF-8",
+        "X-Content-Type-Options": "nosniff",
+        "X-Frame-Options": "SAMEORIGIN",
+        "X-XSS-Protection": "1; mode=block",
+        "Content-Length": "31",
+        "Server": "GSE",
+        "Alternate-Protocol": "443:quic,p=1",
+        "Alt-Svc": "quic=\":443\"; ma=604800; v=\"30,29,28,27,26,25\""
+      },
+      "status_code": 200,
+      "type": "ok"
+    }
+  }
+]
