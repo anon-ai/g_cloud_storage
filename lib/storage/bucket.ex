@@ -3,7 +3,7 @@ defmodule GCloudStorage.Bucket do
 
    defstruct [
      :kind, :id, :selfLink, :projectNumber, :name,
-     :time_created, :updated, :metageneration, :owner,
+     :timeCreated, :updated, :metageneration, :owner,
      :location, :storageClass, :etag
    ]
 
@@ -61,7 +61,7 @@ defmodule GCloudStorage.Bucket do
 
    defp new_bucket(params) do
      %GCloudStorage.Bucket{}
-     |> Map.merge convert_keys_to_atoms(params)
+     |> Map.merge(convert_keys_to_atoms(params))
    end
 
    defp convert_keys_to_atoms(params) do
