@@ -42,7 +42,7 @@ defmodule GCloudStorage.Bucket do
    """
    @spec delete(String.t) :: tuple
    def delete(bucket) do
-     GCloudStorage.Client.delete("/#{bucket}")
+     GCloudStorage.Client.delete("#{bucket}")
      |> extract_body
    end
 
