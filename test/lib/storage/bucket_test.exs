@@ -1,7 +1,6 @@
 defmodule GCloudStorage.BucketTest do
   use ExUnit.Case, async: false
-  use ExVCR.Mock, adapter: ExVCR.Adapter.Hackney, options: [clear_mock: true]
-  use ExUnit.Case
+  use ExVCR.Mock, adapter: ExVCR.Adapter.Hackney
 
   alias GCloudStorage.Bucket
 
@@ -11,29 +10,52 @@ defmodule GCloudStorage.BucketTest do
   end
 
   test "list empty project", context do
-    use_cassette "empty_project" do
+     use_cassette "empty_project" do
+      GCloudStorage.AccessToken.refresh
       assert {:ok, []} = Bucket.list(context[:project])
-    end
+     end
   end
 
   test "list project with single bucket", context do
     name = context[:name]
     use_cassette "project_with_single_bucket" do
+      GCloudStorage.AccessToken.refresh
       assert {:ok, [%GCloudStorage.Bucket{name: name}]} = Bucket.list(context[:project])
     end
-    # assert {:error, %{code: _, errors: _, message: _}} = Bucket.insert(project, params)
-    # assert {:ok, [%GCloudStorage.Bucket{name: name}]} = Bucket.list(project)
-    # assert {:ok, nil} = Bucket.delete(name)
-    # assert {:error, %{code: _, errors: _, message: _}} = Bucket.delete(name)
   end
 
-  test "insert bucket into project", context do
+  test "successfull bucket creation", context do
     bucket = context[:bucket]
     params = %GCloudStorage.BucketParams{name: bucket}
-    use_cassette "insert_first_bucket" do
+    use_cassette "successfull_bucket_creation" do
+      GCloudStorage.AccessToken.refresh
       assert {:ok, %GCloudStorage.Bucket{name: bucket}} = Bucket.insert(context[:project], params)
     end
   end
+
+  test "failed bucket creation", context do
+      bucket = context[:bucket]
+      params = %GCloudStorage.BucketParams{name: bucket}
+      use_cassette "duplicated_bucket_insertion" do
+        GCloudStorage.AccessToken.refresh
+        assert {:error, %{code: _, errors: _, message: _}} = Bucket.insert(context[:project], params)
+      end
+  end
+
+  test "successfull bucket deletion", context do
+    use_cassette "successfull_bucket_deletion" do
+      GCloudStorage.AccessToken.refresh
+      assert {:ok, nil} = Bucket.delete(context[:bucket])
+    end
+  end
+
+  test "failed bucket deletion", context do
+    use_cassette "failed_bucket_deletion" do
+      GCloudStorage.AccessToken.refresh
+      assert {:error, %{code: _, errors: _, message: _}} = Bucket.delete(context[:bucket])
+    end
+  end
+
   # test "predifined acl"
   # test "predifned defulat object acl"
 end

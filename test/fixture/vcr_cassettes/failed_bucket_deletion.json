@@ -1,0 +1,66 @@
+[
+  {
+    "request": {
+      "body": "grant_type=urn%3aietf%3aparams%3aoauth%3agrant-type%3ajwt-bearer&assertion=eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiJ9.eyJzY29wZSI6Imh0dHBzOi8vd3d3Lmdvb2dsZWFwaXMuY29tL2F1dGgvZGV2c3RvcmFnZS5mdWxsX2NvbnRyb2wiLCJpc3MiOiIxMzkzNDMzOTMwMzUtODhiNTkwOTk1YXFxbThrcnM2c2RyY21nOG02bmtsOGRAZGV2ZWxvcGVyLmdzZXJ2aWNlYWNjb3VudC5jb20iLCJpYXQiOjE0NTMyNTMzMzYsImV4cCI6MTQ1MzI1NjkzNiwiYXVkIjoiaHR0cHM6Ly93d3cuZ29vZ2xlYXBpcy5jb20vb2F1dGgyL3YzL3Rva2VuIn0.s3OzIzEYKo13ZOFHuqT-GEXT192qVq3DDp_V-yP14px-8YGlYn4n4kx_cGbGdMlAZrPeUPA4I2Mn3RogGzBJFSXX_rMYqsfGMA_PMuW__LQ12ZEogzMrZByC62G3Nhq9KukDRIhpsA5WVONggSRGClupo_wL3Ro6s1dzyQDqQeP09ND0ZgJ2QrgJ9Ud7PT5kKwuMwlLjDdALUZ_FP0KSAZt-xnm3CVRQ8PmEOrI7o6pu-zNg9vsniW29fpsQY_5UMc8oqagfprrNaj6G09oFnKMJwtFxLksyIHqKQ6YATOrLPsaxmqr6D0pcxbQDOpkgRZWtRMccdXN2Zkhe0x_vUg",
+      "headers": [],
+      "method": "post",
+      "options": [],
+      "request_body": "",
+      "url": "https://www.googleapis.com/oauth2/v3/token"
+    },
+    "response": {
+      "body": "{\n \"access_token\": \"ya29.bwK9mWP64naJDAHu4ojR2M_8jpp3-9ugOM5-4RO9lAVQ5XU-bBeb-pcZDoYgPrbT_gYi4MM\",\n \"token_type\": \"Bearer\",\n \"expires_in\": 3600\n}\n",
+      "headers": {
+        "Cache-Control": "no-cache, no-store, max-age=0, must-revalidate",
+        "Pragma": "no-cache",
+        "Expires": "Fri, 01 Jan 1990 00:00:00 GMT",
+        "Date": "Wed, 20 Jan 2016 01:28:57 GMT",
+        "Vary": "X-Origin",
+        "Content-Type": "application/json; charset=UTF-8",
+        "X-Content-Type-Options": "nosniff",
+        "X-Frame-Options": "SAMEORIGIN",
+        "X-XSS-Protection": "1; mode=block",
+        "Server": "GSE",
+        "Alternate-Protocol": "443:quic,p=1",
+        "Alt-Svc": "quic=\":443\"; ma=604800; v=\"30,29,28,27,26,25\"",
+        "Accept-Ranges": "none",
+        "Transfer-Encoding": "chunked"
+      },
+      "status_code": 200,
+      "type": "ok"
+    }
+  },
+  {
+    "request": {
+      "body": "",
+      "headers": {
+        "Authorization": "Bearer ya29.bwK9mWP64naJDAHu4ojR2M_8jpp3-9ugOM5-4RO9lAVQ5XU-bBeb-pcZDoYgPrbT_gYi4MM",
+        "Content-type": "application/json"
+      },
+      "method": "delete",
+      "options": [],
+      "request_body": "",
+      "url": "https://www.googleapis.com/storage/v1/b/exs-sandbox-test-bucket"
+    },
+    "response": {
+      "body": "{\n \"error\": {\n  \"errors\": [\n   {\n    \"domain\": \"global\",\n    \"reason\": \"notFound\",\n    \"message\": \"Not Found\"\n   }\n  ],\n  \"code\": 404,\n  \"message\": \"Not Found\"\n }\n}\n",
+      "headers": {
+        "Vary": "X-Origin",
+        "Content-Type": "application/json; charset=UTF-8",
+        "Date": "Wed, 20 Jan 2016 01:28:58 GMT",
+        "Expires": "Wed, 20 Jan 2016 01:28:58 GMT",
+        "Cache-Control": "private, max-age=0",
+        "X-Content-Type-Options": "nosniff",
+        "X-Frame-Options": "SAMEORIGIN",
+        "X-XSS-Protection": "1; mode=block",
+        "Server": "GSE",
+        "Alternate-Protocol": "443:quic,p=1",
+        "Alt-Svc": "quic=\":443\"; ma=604800; v=\"30,29,28,27,26,25\"",
+        "Accept-Ranges": "none",
+        "Transfer-Encoding": "chunked"
+      },
+      "status_code": 404,
+      "type": "ok"
+    }
+  }
+]
