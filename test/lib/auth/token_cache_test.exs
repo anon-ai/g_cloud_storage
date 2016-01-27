@@ -14,11 +14,11 @@ defmodule GCloudStorage.TokenCacheTest do
 
 
   test "it refresh  expired token" do
-    use_cassette "fetch_token" do
-      secret = "secret"
-      timeout = div(Config.token[:timeout], 2)
-      token = TokenCache.access_token
-    end
+    # use_cassette "fetch_token" do
+    #   secret = "secret"
+    #   timeout = div(Config.token[:timeout], 2)
+    #   token = TokenCache.access_token
+    # end
     # refute token  == secret
     # :timer.sleep(timeout)
 

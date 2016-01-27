@@ -17,10 +17,10 @@ defmodule GCloudStorage.BucketTest do
   end
 
   test "list project with single bucket", context do
-    name = context[:name]
+    name = context[:bucket]
     use_cassette "project_with_single_bucket" do
       GCloudStorage.AccessToken.refresh
-      assert {:ok, [%GCloudStorage.Bucket{name: name}]} = Bucket.list(context[:project])
+      assert {:ok, [%GCloudStorage.Bucket{name: ^name}]} = Bucket.list(context[:project])
     end
   end
 
@@ -29,7 +29,7 @@ defmodule GCloudStorage.BucketTest do
     params = %GCloudStorage.BucketParams{name: bucket}
     use_cassette "successfull_bucket_creation" do
       GCloudStorage.AccessToken.refresh
-      assert {:ok, %GCloudStorage.Bucket{name: bucket}} = Bucket.insert(context[:project], params)
+      assert {:ok, %GCloudStorage.Bucket{name: ^bucket}} = Bucket.insert(context[:project], params)
     end
   end
 

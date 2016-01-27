@@ -1,0 +1,32 @@
+[
+  {
+    "request": {
+      "body": "grant_type=urn%3aietf%3aparams%3aoauth%3agrant-type%3ajwt-bearer&assertion=eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiJ9.eyJzY29wZSI6Imh0dHBzOi8vd3d3Lmdvb2dsZWFwaXMuY29tL2F1dGgvZGV2c3RvcmFnZS5mdWxsX2NvbnRyb2wiLCJpc3MiOm51bGwsImlhdCI6MTQ1MzE2OTAzMiwiZXhwIjoxNDUzMTcyNjMyLCJhdWQiOiJodHRwczovL3d3dy5nb29nbGVhcGlzLmNvbS9vYXV0aDIvdjMvdG9rZW4ifQ.g0le0LCwUi613JElYu4_6krphq3W5WlvvEU7V_KUti1HQxY6uH3sC7UnY2e1j0kkDMvqSV6ORy90X1jtctfMoRNDwUUJTzOFwsmFyyNr18XGUKSOFEMyLbqbi3bnjgpl9Rig2Adj0Inw3u-uVBydsShgWFmMlIw-Q3t4uCL_DEM2CLhDPK9zoHbFpG5Iz-nCsKj5OgbWSuDBhHMtSuIND0s4h4DKpkK0GkRzGU7uAY_HojOUESqRbcb9xd3EScsvpCpRJpSKnXGNBl8JNJ4kDtnb-BtlGEvnuKeNpsz069-pC_WOvOH6UGAfOAwmn11hiyvB8oZ5n3EyOCrtEohX-Q",
+      "headers": [],
+      "method": "post",
+      "options": [],
+      "request_body": "",
+      "url": "https://www.googleapis.com/oauth2/v3/token"
+    },
+    "response": {
+      "body": "{\n \"error\": \"invalid_grant\",\n \"error_description\": \"Bad Request\"\n}\n",
+      "headers": {
+        "Vary": "X-Origin",
+        "Content-Type": "application/json; charset=UTF-8",
+        "Date": "Tue, 19 Jan 2016 02:03:52 GMT",
+        "Expires": "Tue, 19 Jan 2016 02:03:52 GMT",
+        "Cache-Control": "private, max-age=0",
+        "X-Content-Type-Options": "nosniff",
+        "X-Frame-Options": "SAMEORIGIN",
+        "X-XSS-Protection": "1; mode=block",
+        "Server": "GSE",
+        "Alternate-Protocol": "443:quic,p=1",
+        "Alt-Svc": "quic=\":443\"; ma=604800; v=\"30,29,28,27,26,25\"",
+        "Accept-Ranges": "none",
+        "Transfer-Encoding": "chunked"
+      },
+      "status_code": 400,
+      "type": "ok"
+    }
+  }
+]
