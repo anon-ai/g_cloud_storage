@@ -1,6 +1,4 @@
 defmodule GCloudStorage.Object do
-  use Pipe
-
   @doc """
   Upload object
   """

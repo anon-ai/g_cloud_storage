@@ -1,5 +1,5 @@
 defmodule GCloudStorage.Bucket do
-   use Pipe
+   use GCloudStorage.Pipe
 
    defstruct [
      :kind, :id, :selfLink, :projectNumber, :name,

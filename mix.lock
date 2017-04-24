@@ -1,8 +1,5 @@
 %{"base64url": {:hex, :base64url, "0.0.1"},
   "certifi": {:hex, :certifi, "0.3.0"},
-  "elixir-pipes": {:git, "https://github.com/batate/elixir-pipes.git", "0e046b108c5c758dd007a235d3adce89eeeab8d8", []},
-  "elixir_pipes": {:git, "https://github.com/batate/elixir-pipes.git", "0e046b108c5c758dd007a235d3adce89eeeab8d8", []},
-  "elixirp-ipes": {:git, "https://github.com/batate/elixir-pipes.git", "0e046b108c5c758dd007a235d3adce89eeeab8d8", []},
   "exactor": {:hex, :exactor, "2.2.0"},
   "exjsx": {:hex, :exjsx, "3.2.0"},
   "exvcr": {:hex, :exvcr, "0.7.1"},
