@@ -16,7 +16,7 @@ defmodule GCloudStorage.Bucket do
    def list(project, opts \\ %{}) do
      params = Map.put_new opts, :project, project
 
-     pipe_matching {:ok, _}, GCloudStorage.Client.get("", [], params: params)
+     pipe_matching {:ok, _}, Client.get("", [], params: params)
      |> extract_body
      |> fill_buckets
    end
@@ -29,7 +29,7 @@ defmodule GCloudStorage.Bucket do
      payload = Poison.encode!(params)
 
      request =
-       GCloudStorage.Client.post("?project=#{project}", payload)
+       Client.post("?project=#{project}", payload)
        |> extract_body
      case request do
        {:ok, params} -> {:ok, new_bucket(params)}
@@ -42,7 +42,7 @@ defmodule GCloudStorage.Bucket do
    """
    @spec delete(String.t) :: tuple
    def delete(bucket) do
-     GCloudStorage.Client.delete("#{bucket}")
+     Client.delete("#{bucket}")
      |> extract_body
    end
 

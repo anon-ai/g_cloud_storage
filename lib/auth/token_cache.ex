@@ -1,6 +1,6 @@
 defmodule GCloudStorage.TokenCache do
   use GenServer
-  
+
   #Client API
   def start_link do
     GenServer.start_link(__MODULE__, {%GCloudStorage.AccessToken{}, {}}, name: __MODULE__)
@@ -12,19 +12,19 @@ defmodule GCloudStorage.TokenCache do
 
   # Server API
   def handle_call(:access_token, _from, {%GCloudStorage.AccessToken{token: ""}, _}) do
-    refresh
+    refresh()
   end
 
   def handle_call(:access_token, _from, {access_token = %GCloudStorage.AccessToken{}, retrived}) do
     if (token_expired(retrived, access_token.expires_in)) do
-      refresh
+      refresh()
     else
       {:reply, access_token.token, {access_token, retrived}}
     end
   end
 
   defp refresh do
-    token = token_provider.refresh
+    token = token_provider().refresh
     retrieved = :os.timestamp
     {:reply, token.token, {token, retrieved}}
   end

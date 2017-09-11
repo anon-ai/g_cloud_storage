@@ -7,7 +7,7 @@ defmodule GCloudStorage.Mixfile do
      elixir: "~> 1.0",
      build_embedded: Mix.env == :prod,
      start_permanent: Mix.env == :prod,
-     deps: deps,
+     deps: deps(),
      elixirc_paths: elixirc_paths(Mix.env)
     ]
   end
@@ -16,7 +16,7 @@ defmodule GCloudStorage.Mixfile do
   #
   def application do
     [
-      applications: [:logger, :httpoison],
+      applications: [:logger, :httpoison, :poison, :json_web_token],
       mod: {GCloudStorage, []}
     ]
   end

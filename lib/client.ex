@@ -15,11 +15,10 @@ defmodule GCloudStorage.Client do
     )
   end
 
-  def process_response_body(""),
-    do: nil
-
+  def process_response_body("") do
+    nil
+  end
   def process_response_body(body) do
-    body
-    |> Poison.decode!
+    body |> Poison.decode!
   end
 end

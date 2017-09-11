@@ -9,7 +9,7 @@ defmodule GCloudStorage do
     ]
 
     opts = [strategy: :one_for_one, name: GCloudStorage.Supervisor]
-   {:ok, pid} =  Supervisor.start_link(children, opts)
+    Supervisor.start_link(children, opts)
   end
 
 end

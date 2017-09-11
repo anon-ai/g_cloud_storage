@@ -6,8 +6,8 @@ defmodule GCloudStorage.AccessToken do
 
   @refresh_url "https://www.googleapis.com/oauth2/v3/token"
   @permissions "https://www.googleapis.com/auth/devstorage.full_control"
-  @header       ~s({"alg":"RS256","typ":"JWT"})
-  @access_token_exchange_url "https://www.googleapis.com/oauth2/v3/token"
+  # @header       ~s({"alg":"RS256","typ":"JWT"})
+  # @access_token_exchange_url "https://www.googleapis.com/oauth2/v3/token"
 
   @doc """
   Exchang JWT to the auth token
@@ -15,7 +15,7 @@ defmodule GCloudStorage.AccessToken do
   def refresh do
     form_data = [
         grant_type: "urn:ietf:params:oauth:grant-type:jwt-bearer",
-        assertion: jwt
+        assertion: jwt()
     ]
 
     {:ok, %HTTPoison.Response{body: body, status_code: 200}} = HTTPoison.post(
@@ -29,8 +29,8 @@ defmodule GCloudStorage.AccessToken do
   # JWT generation
 
   defp jwt do
-    claim_set |>
-      JsonWebToken.sign(%{alg: "RS256", key: private_key})
+    claim_set() |>
+      JsonWebToken.sign(%{alg: "RS256", key: private_key()})
   end
 
   defp private_key do
@@ -45,8 +45,8 @@ defmodule GCloudStorage.AccessToken do
       iss:   Settings.client_email,
       scope: @permissions,
       aud:   @refresh_url,
-      iat:   seconds_since_epoch,
-      exp:   one_hour_from_now
+      iat:   seconds_since_epoch(),
+      exp:   one_hour_from_now()
     }
   end
 
@@ -55,7 +55,7 @@ defmodule GCloudStorage.AccessToken do
     (mega_secs * 1000000) + secs
   end
 
-  defp one_hour_from_now, do:
-    seconds_since_epoch + 3600
-
+  defp one_hour_from_now do
+    seconds_since_epoch() + 3600
+  end
 end
