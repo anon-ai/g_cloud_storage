@@ -23,7 +23,7 @@ defmodule GCloudStorage.Mixfile do
 
   defp deps do
     [
-      {:poison,         "~> 1.5.2"},
+      {:poison,         "~> 3.0"},
       {:httpoison,      "~> 0.8"},
       {:json_web_token, github: "garyf/json_web_token_ex"},
       {:exvcr, "~> 0.7", only: :test}
