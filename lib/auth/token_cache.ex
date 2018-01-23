@@ -10,6 +10,10 @@ defmodule GCloudStorage.TokenCache do
     GenServer.call(__MODULE__, :access_token)
   end
 
+  def init(state) do
+    {:ok, state}
+  end
+
   # Server API
   def handle_call(:access_token, _from, {%GCloudStorage.AccessToken{token: ""}, _}) do
     refresh()
